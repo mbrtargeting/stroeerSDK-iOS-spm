@@ -36,22 +36,22 @@ let package = Package(
         .binaryTarget(
             name: "YieldloveAdIntegration",
             url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.2.0/YieldloveAdIntegration.xcframework.zip",
-            checksum: "769ef157a72b551310ac8345275e9b6c6f99740a99022c03686b45bfc550e063"
+            checksum: "cac0158da5c0a5eaa3a785322acd82644110b04c7e331020befddcd7e6d3fc56"
         ),
         .binaryTarget(
             name: "YieldloveAdIntegration_Consent",
             url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.2.0/YieldloveAdIntegration_Consent.xcframework.zip",
-            checksum: "9e50055e057dd16f675d70cd9605259c85f43cb2edacc774d4b9b55870b7d4a9"
+            checksum: "7734b799d2908f4067ac28cdc26959987fed1cb2f269049e605039b8834eda39"
         ),
         .binaryTarget(
             name: "YieldloveAdIntegration_Confiant",
             url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.2.0/YieldloveAdIntegration_Confiant.xcframework.zip",
-            checksum: "d6f96b5a822a86f2a6523e2c3ce3edd705bd5ab42e83d34a2cd4eb10a6413723"
+            checksum: "bff9f69dc72686c4f1d9d4e4b7562d4a040a539a64117d07cc835d6b134f1678"
         ),
         .binaryTarget(
             name: "YieldloveAdIntegration_Gravite",
             url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.2.0/YieldloveAdIntegration_Gravite.xcframework.zip",
-            checksum: "c09c2da0faa6b8ba22c5081ebf1f65aad8d1ea46c730cbea4dffe1e55579f433"
+            checksum: "5c6311ca18fc2329a8de4d559fd30b53ceedbfb55173750891d9138e1bb152d5"
         ),
         .binaryTarget(
             name: "OMSDK_Prebidorg",
