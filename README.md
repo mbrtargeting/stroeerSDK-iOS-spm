@@ -1,4 +1,4 @@
-# StroeerSDK iOS (SPM)
+# StroeerSDK
 
 A Package that distributes the **Yieldlove Ad Integration** Core and optional plugins (Consent, Confiant, Gravite).  
 
@@ -14,3 +14,8 @@ A Package that distributes the **Yieldlove Ad Integration** Core and optional pl
 2. Select your app **target** → **Build Settings**.
 3. Search for **Other Linker Flags**.
 4. Add **`-ObjC`**.
+
+---
+
+### Confiant plugin
+- The **Confiant SDK is intentionally not bundled** with the plugin and **must be added by the publisher** at the app level.
