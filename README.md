@@ -30,7 +30,16 @@ A Package that distributes the **Yieldlove Ad Integration** Core and optional pl
 3. Search for **Other Linker Flags**.
 4. Add **`-ObjC`**.
 
----
-
 ### Confiant plugin
-- The **Confiant SDK is intentionally not bundled** with the plugin and **must be added by the publisher** at the app level.
+The **Confiant SDK is intentionally not bundled** with the plugin and **must be added by the publisher** at the app level.
+
+### Gravite Plugin – Dependency Guidance
+For projects using the Gravite plugin, do not add the following AATKit modules to your app:
+
+- AATKit-Prebid
+
+- AATKit-Default
+
+- AATKit-SourcePointCMP
+
+These modules are not supported in our Gravite integration and may cause duplicate linking, unexpected behavior, or conflicts with our SDK’s dependency graph.
