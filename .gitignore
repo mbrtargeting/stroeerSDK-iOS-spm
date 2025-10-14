@@ -5,8 +5,6 @@
 # macOS / Xcode noise
 .DS_Store
 xcuserdata/
-*.xcworkspace
-*.xcodeproj  
 
 # Optional for libs
 Package.resolved
