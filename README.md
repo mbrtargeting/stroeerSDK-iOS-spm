@@ -43,3 +43,5 @@ For projects using the Gravite plugin, do not add the following AATKit modules t
 - AATKit-SourcePointCMP
 
 These modules are not supported in our Gravite integration and may cause duplicate linking, unexpected behavior, or conflicts with our SDK’s dependency graph.
+
+An **ExampleApp** project is included in this repository to demonstrate how to integrate and use the SDK with real Swift code.
