@@ -270,6 +270,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleApp/Info.plist;
@@ -309,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExampleApp/Info.plist;
@@ -368,7 +370,7 @@
 			repositoryURL = "https://github.com/mbrtargeting/stroeerSDK-iOS-spm";
 			requirement = {
 				kind = exactVersion;
-				version = 10.2.1;
+				version = 10.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
