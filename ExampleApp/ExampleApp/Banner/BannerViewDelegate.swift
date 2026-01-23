@@ -1,44 +1,31 @@
-//
-//  SimpleBannerDelegate.swift
-//  AdTestApp
-//
-//  Created by Shafee Rehman on 01/07/2025.
-//
-
-
 import SwiftUI
 import YieldloveAdIntegration
+import GoogleMobileAds
 
 class BannerViewDelegate: YLBannerViewDelegate {
-    weak var viewController: UIViewController?
-    private var bannerHeight: Binding<CGFloat>
-    var onError: ((String) -> Void)?
-    var isLoaded: ((Bool) -> Void)?
-
-    init(viewController: UIViewController, bannerHeight: Binding<CGFloat>, onError: ((String) -> Void)?, isLoaded: ((Bool) -> Void)? = nil) {
+    var viewController: UIViewController
+    var onAdSize: ((CGSize) -> Void)?
+    
+    init(viewController: UIViewController, onAdSize: ((CGSize) -> Void)? = nil) {
         self.viewController = viewController
-        self.bannerHeight = bannerHeight
-        self.onError = onError
-        self.isLoaded = isLoaded
+        self.onAdSize = onAdSize
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func bannerViewDidReceiveAd(_ bannerView: YLBannerView) {
-        if let adContainer = viewController?.view {
-            adContainer.addSubview(bannerView)
-        }
-        
-        DispatchQueue.main.async {
-            self.bannerHeight.wrappedValue = bannerView.frame.height
-            self.isLoaded?(true)
+        viewController.view.addSubview(bannerView)
+
+        Yieldlove.instance.resizeBanner(banner: bannerView) {
+            bannerView.layoutIfNeeded()
+            let size = bannerView.getBannerSize()
+            self.onAdSize?(size)
         }
     }
     
-    func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
-        let message = "Failed to load ad: \(error)"
-        DispatchQueue.main.async {
-            self.onError?(message)
-            self.bannerHeight.wrappedValue = 0
-            self.isLoaded?(true)
-        }
+    public func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
+        // should test app show an error?
     }
 }

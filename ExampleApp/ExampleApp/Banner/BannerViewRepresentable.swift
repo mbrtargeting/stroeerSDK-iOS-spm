@@ -1,25 +1,27 @@
 //
-//  GADBannerViewRepresentable.swift
-//  AdTestApp
+//  BannerViewRepresentable.swift
+//  SimpleAdTest
 //
-//  Created by Shafee Rehman on 01/07/2025.
+//  Created by Hyungon Kim on 22/07/2024.
 //
 
+import Foundation
 import SwiftUI
 import YieldloveAdIntegration
 
+
 struct BannerViewRepresentable: UIViewControllerRepresentable {
-    let adSlotId: String
-    @Binding var bannerHeight: CGFloat
-    var errorCallback: ((String) -> Void)? = nil
-    var isLoaded: ((Bool) -> Void)? = nil
+    
+    let slotId: String
+    let onAdSize: (CGSize) -> Void
 
     func makeUIViewController(context: Context) -> BannerViewController {
-        let vc = BannerViewController(adSlotId: adSlotId, bannerHeight: $bannerHeight, isLoaded: isLoaded)
-        vc.onError = errorCallback
-        vc.loadBanner()
+        let vc = BannerViewController()
+        vc.slotId = slotId
+        vc.onAdSize = onAdSize
         return vc
     }
-    
-    func updateUIViewController(_ uiViewController: BannerViewController, context: Context) {}
+
+    func updateUIViewController(_ uiViewController: BannerViewController, context: Context) {
+    }
 }

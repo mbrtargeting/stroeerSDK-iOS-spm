@@ -1,36 +1,26 @@
 //
-//  BannerHostingController.swift
-//  AdTestApp
+//  BannerViewController.swift
+//  SimpleAdTest
 //
-//  Created by Shafee Rehman on 01/07/2025.
+//  Created by Hyungon Kim on 22/07/2024.
 //
 
-
-import SwiftUI
+import Foundation
+import UIKit
 import YieldloveAdIntegration
 
 class BannerViewController: UIViewController {
-    private let adSlotId: String
-    private var bannerDelegate: BannerViewDelegate?
-    private var bannerHeightBinding: Binding<CGFloat>
-    var onError: ((String) -> Void)?
-    var isLoaded: ((Bool) -> Void)?
-
-    init(adSlotId: String, bannerHeight: Binding<CGFloat>, isLoaded: ((Bool) -> Void)? = nil) {
-        self.adSlotId = adSlotId
-        self.bannerHeightBinding = bannerHeight
-        self.isLoaded = isLoaded
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
-    public func loadBanner() {
-        bannerDelegate = BannerViewDelegate(viewController: self, bannerHeight: bannerHeightBinding, onError: onError, isLoaded: isLoaded)
-        Yieldlove.instance.bannerAd(adSlotId: adSlotId, viewController: self, delegate: bannerDelegate!)
-    }
-
-    deinit {
-        bannerDelegate = nil
+    var slotId: String = ""
+    var onAdSize: ((CGSize) -> Void)?
+    var bannerViewDelegate: BannerViewDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.bannerViewDelegate = BannerViewDelegate(viewController: self, onAdSize: onAdSize)
+        Yieldlove.instance.bannerAd(
+            adSlotId: slotId,
+            viewController: self,
+            delegate: bannerViewDelegate!
+        )
     }
 }

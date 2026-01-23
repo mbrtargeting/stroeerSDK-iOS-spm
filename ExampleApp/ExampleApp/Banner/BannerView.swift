@@ -1,56 +1,46 @@
 //
 //  BannerView.swift
-//  AdTestApp
+//  SimpleAdTest
 //
-//  Created by Shafee Rehman on 01/07/2025.
+//  Created by Hyungon Kim on 22/07/2024.
 //
 
+import Foundation
 import SwiftUI
 
-struct BannerView: View {
-    @State private var bannerHeight: CGFloat = 0.0
-    @State private var errorMessage: String?
-    @State private var isLoaded: Bool = false
+struct BannerView : View
+{
+    @State private var size1: CGSize = .zero
+    @State private var size2: CGSize = .zero
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack {
             HStack {
                 Spacer()
-                Text("Banner Ad")
-                    .foregroundStyle(.white)
-                    .font(.title)
-                    .bold()
-                    .padding()
-                Spacer()
-            }
-            Spacer()
-            if let errorMessage = errorMessage {
-                Text(errorMessage)
-                    .foregroundStyle(.red)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-            } else {
-                ZStack {
-                    if !isLoaded {
-                        ProgressView()
-                    }
-                    BannerViewRepresentable(
-                        adSlotId: "banner",
-                        bannerHeight: $bannerHeight,
-                        errorCallback: { error in
-                            self.errorMessage = error
-                        },
-                        isLoaded: { loaded in
-                            self.isLoaded = loaded
-                        }
-                    )
-                    .frame(height: bannerHeight)
-                }
             }
             
             Spacer()
+            
+            BannerViewRepresentable(
+                slotId: "banner",
+                onAdSize: { size in
+                    self.size1 = size
+                }
+            )
+            .frame(width: size1.width, height: size1.height)
+            
+            BannerViewRepresentable(
+                slotId: "banner",
+                onAdSize: { size in
+                    self.size2 = size
+                }
+            )
+            .frame(width: size2.width, height: size2.height)
+            
+            Spacer()
         }
-        .background(Color("Background").ignoresSafeArea())
-        .tint(.white)
+        .background(
+            Color("Background")
+        )
     }
 }
