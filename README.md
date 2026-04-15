@@ -23,25 +23,80 @@ A Package that distributes the **Yieldlove Ad Integration** Core and optional pl
 
 ## Important Note
 
-**You must add `-ObjC`** to your app target’s linker flags:
+You must add `-ObjC` to your app target’s linker flags.
+
+### Add `-ObjC`
 
 1. Open your Xcode project.
-2. Select your app **target** → **Build Settings**.
-3. Search for **Other Linker Flags**.
-4. Add **`-ObjC`**.
+2. Select your app target.
+3. Open **Build Settings**.
+4. Search for **Other Linker Flags**.
+5. Add:
 
-### Confiant plugin
-The **Confiant SDK is intentionally not bundled** with the plugin and **must be added by the publisher** at the app level.
+   `-ObjC`
 
-### Gravite Plugin – Dependency Guidance
-For projects using the Gravite plugin, do not add the following AATKit modules to your app:
+## Core SDK
 
-- AATKit-Prebid
+If you only use the core SDK, add:
 
-- AATKit-Default
+- `YieldloveAdIntegration`
 
-- AATKit-SourcePointCMP
+No additional publisher-managed plugin dependency is required for the core product.
 
-These modules are not supported in our Gravite integration and may cause duplicate linking, unexpected behavior, or conflicts with our SDK’s dependency graph.
+## Consent Plugin
 
-An **ExampleApp** project is included in this repository to demonstrate how to integrate and use the SDK with real Swift code.
+If you use:
+
+- `YieldloveAdIntegration_Consent`
+
+you must also add the SourcePoint CMP dependency at the **publisher app level**.
+
+Required dependency:
+
+- `https://github.com/SourcePointUSA/ios-cmp-app.git`
+- version: `7.7.7`
+
+### Important
+
+The Consent dependency is **not bundled automatically** through this package.  
+Publishers using `YieldloveAdIntegration_Consent` must add `ios-cmp-app` themselves.
+
+## Confiant Plugin
+
+If you use:
+
+- `YieldloveAdIntegration_Confiant`
+
+the Confiant SDK is intentionally **not bundled** with the plugin and must be added by the publisher at the app level, if required by the integration.
+
+## Gravite Plugin
+
+If you use:
+
+- `YieldloveAdIntegration_Gravite`
+
+you must also add the AATKit dependency at the **publisher app level**.
+
+Required dependency:
+
+- `https://github.com/AddApptr/AATKitSPM.git`
+- version: `3.12.7`
+
+### Important
+
+The AATKit dependency is **not bundled automatically** through this package.  
+Publishers using `YieldloveAdIntegration_Gravite` must add `AATKitSPM` themselves.
+
+### Dependency Guidance
+
+For projects using the Gravite plugin, do **not** add the following AATKit modules to your app:
+
+- `AATKit-Prebid`
+- `AATKit-Default`
+- `AATKit-SourcePointCMP`
+
+These modules are not supported in our Gravite integration and may cause duplicate linking, unexpected behavior, or conflicts with our SDK setup.
+
+## Example App
+
+An `ExampleApp` project is included in this repository to demonstrate how to integrate and use the SDK in a real Swift project.
