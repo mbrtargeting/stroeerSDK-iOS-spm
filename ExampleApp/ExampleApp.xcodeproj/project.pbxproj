@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CDAAACC2FB3F2E8003F33BE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 5CDAAACB2FB3F2E8003F33BE /* GoogleMobileAds */; };
 		5CF790302E9DD9870099B085 /* YieldloveAdIntegration in Frameworks */ = {isa = PBXBuildFile; productRef = 5CF7902F2E9DD9870099B085 /* YieldloveAdIntegration */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDAAACC2FB3F2E8003F33BE /* GoogleMobileAds in Frameworks */,
 				5CF790302E9DD9870099B085 /* YieldloveAdIntegration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +94,7 @@
 			name = ExampleApp;
 			packageProductDependencies = (
 				5CF7902F2E9DD9870099B085 /* YieldloveAdIntegration */,
+				5CDAAACB2FB3F2E8003F33BE /* GoogleMobileAds */,
 			);
 			productName = ExampleApp;
 			productReference = 5CF7900A2E9DD8B40099B085 /* ExampleApp.app */;
@@ -123,6 +126,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				5CF7902E2E9DD9870099B085 /* XCRemoteSwiftPackageReference "stroeerSDK-iOS-spm" */,
+				5CDAAACA2FB3F2E8003F33BE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5CF7900B2E9DD8B40099B085 /* Products */;
@@ -373,17 +377,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5CDAAACA2FB3F2E8003F33BE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = exactVersion;
+				version = 12.11.0;
+			};
+		};
 		5CF7902E2E9DD9870099B085 /* XCRemoteSwiftPackageReference "stroeerSDK-iOS-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mbrtargeting/stroeerSDK-iOS-spm";
 			requirement = {
 				kind = exactVersion;
-				version = 10.4.2;
+				version = 10.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5CDAAACB2FB3F2E8003F33BE /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CDAAACA2FB3F2E8003F33BE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		5CF7902F2E9DD9870099B085 /* YieldloveAdIntegration */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5CF7902E2E9DD9870099B085 /* XCRemoteSwiftPackageReference "stroeerSDK-iOS-spm" */;
