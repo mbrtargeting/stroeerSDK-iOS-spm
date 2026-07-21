@@ -12,20 +12,33 @@ let package = Package(
         ),
         .library(
             name: "YieldloveAdIntegration_Consent",
-            targets: ["YieldloveAdIntegration_Consent", "ConsentSupport"]
+            targets: [
+                "YieldloveAdIntegration",
+                "YieldloveAdIntegration_Consent",
+                "CoreSupport",
+                "ConsentSupport"
+            ]
         ),
         .library(
             name: "YieldloveAdIntegration_Confiant",
-            targets: ["YieldloveAdIntegration_Confiant", "ConfiantSupport"]
-        ),
-        .library(
-            name: "YieldloveAdIntegration_Gravite",
-            targets: ["YieldloveAdIntegration_Gravite", "GraviteSupport"]
+            targets: [
+                "YieldloveAdIntegration",
+                "YieldloveAdIntegration_Confiant",
+                "CoreSupport",
+                "ConfiantSupport"
+            ]
         )
     ],
 
     dependencies: [
-        .package(url: "https://github.com/yene/GCDWebServer",exact: "3.5.7")
+        .package(
+            url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+            exact: "12.14.0"
+        ),
+        .package(
+            url: "https://github.com/SourcePointUSA/ios-cmp-app.git",
+            exact: "7.12.10"
+        )
     ],
 
     targets: [
@@ -45,33 +58,23 @@ let package = Package(
             checksum: "3c105c6b690593383f53164a649c8d7ce982ef8791037a90d2f4f6c11b1fb3c3"
         ),
         .binaryTarget(
-            name: "YieldloveAdIntegration_Gravite",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.5.2/YieldloveAdIntegration_Gravite.xcframework.zip",
-            checksum: "8330e701b301a5cdb052a6618c99dc03f532ebfefd736304bdf163ba322acb59"
-        ),
-        .binaryTarget(
-            name: "PromiseKit",
-            path: "Frameworks/PromiseKit.xcframework"
+            name: "XCPrebidMobile",
+            path: "Frameworks/XCPrebidMobile.xcframework"
         ),
         .binaryTarget(
             name: "OMSDK_Prebidorg",
             path: "Frameworks/OMSDK_Prebidorg.xcframework"
-        ),
-        .binaryTarget(
-            name: "XCPrebidMobile",
-            path: "Frameworks/XCPrebidMobile.xcframework"
         ),
         
         .target(
             name: "CoreSupport",
             dependencies: [
                 "YieldloveAdIntegration",
-                "OMSDK_Prebidorg",
                 "XCPrebidMobile",
-                "PromiseKit",
+                "OMSDK_Prebidorg",
                 .product(
-                    name: "GCDWebServer",
-                    package: "GCDWebServer"
+                    name: "GoogleMobileAds",
+                    package: "swift-package-manager-google-mobile-ads"
                 )
             ],
             path: "Sources/Core",
@@ -87,8 +90,13 @@ let package = Package(
         .target(
             name: "ConsentSupport",
             dependencies: [
+                "YieldloveAdIntegration",
                 "YieldloveAdIntegration_Consent",
-                "YieldloveAdIntegration"
+                "CoreSupport",
+                .product(
+                    name: "ConsentViewController",
+                    package: "ios-cmp-app"
+                )
             ],
             path: "Sources/Consent",
             sources: ["Shim.swift"]
@@ -97,20 +105,11 @@ let package = Package(
         .target(
             name: "ConfiantSupport",
             dependencies: [
+                "YieldloveAdIntegration",
                 "YieldloveAdIntegration_Confiant",
-                "YieldloveAdIntegration"
+                "CoreSupport"
             ],
             path: "Sources/Confiant",
-            sources: ["Shim.swift"]
-        ),
-
-        .target(
-            name: "GraviteSupport",
-            dependencies: [
-                "YieldloveAdIntegration_Gravite",
-                "YieldloveAdIntegration"
-            ],
-            path: "Sources/Gravite",
             sources: ["Shim.swift"]
         )
     ]
