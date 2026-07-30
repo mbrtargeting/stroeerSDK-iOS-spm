@@ -44,26 +44,26 @@ class BannerViewController: UIViewController, YLBannerViewDelegate {
     }
 
     func bannerView(_ bannerView: YLBannerView, didFailToReceiveAdWithError error: Error) {
-        print("[BANNER_ERROR] slot=\(bannerView.bannerInfo.adUnit) error=\(error.localizedDescription)")
+        print("[BANNER_ERROR] slot=\(bannerView.bannerConfiguration.adSlotId) error=\(error.localizedDescription)")
     }
 
     func bannerViewWillPresentScreen(_ bannerView: YLBannerView) {
-        print("PRESENTED!!! for \(bannerView.bannerInfo.adUnit)")
+        print("PRESENTED!!! for \(bannerView.bannerConfiguration.adSlotId)")
     }
 
     func bannerViewWillDismissScreen(_ bannerView: YLBannerView) {
-        print("DISMISSED!!! for \(bannerView.bannerInfo.adUnit)")
+        print("DISMISSED!!! for \(bannerView.bannerConfiguration.adSlotId)")
     }
 
     func bannerViewDidDismissScreen(_ bannerView: YLBannerView) {
-        print("DISMISSED!!! for \(bannerView.bannerInfo.adUnit)")
+        print("DISMISSED!!! for \(bannerView.bannerConfiguration.adSlotId)")
     }
 
     func bannerViewDidRecordClick(_ bannerView: YLBannerView) {
-        print("CLICKED!!! for \(bannerView.bannerInfo.adUnit)")
+        print("CLICKED!!! for \(bannerView.bannerConfiguration.adSlotId)")
     }
 
     func bannerViewDidRecordImpression(_ bannerView: YLBannerView) {
-        print("IMPRESSION!!! for \(bannerView.bannerInfo.adUnit)")
+        print("IMPRESSION!!! for \(bannerView.bannerConfiguration.adSlotId)")
     }
 }

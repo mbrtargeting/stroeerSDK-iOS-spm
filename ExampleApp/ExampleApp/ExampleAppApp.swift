@@ -12,7 +12,7 @@ import YieldloveAdIntegration
 struct ExampleAppApp: App {
     
     init() {
-        Yieldlove.setup(appName: "appDfpTest")
+        Yieldlove.setup(appName: "appDfpTestID5")
     }
     
     var body: some Scene {

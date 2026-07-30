@@ -25,7 +25,7 @@ class InterstitialViewController: UIViewController {
     
     func loadInterstitialAd() {
         self.delegate = InterstitialViewDelegate(viewController: self, errorCallback: onError, isLoaded: isLoaded)
-        Yieldlove.instance.interstitialAd(adSlotId: adSlotId, interstitialDelegate: delegate, viewController: self)
+        Yieldlove.instance.interstitialAd(adSlotId: adSlotId, interstitialDelegate: delegate)
     }
     
     deinit {
