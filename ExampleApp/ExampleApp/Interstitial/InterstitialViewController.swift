@@ -13,6 +13,7 @@ class InterstitialViewController: UIViewController {
     var delegate: InterstitialViewDelegate?
     var onError: ((String) -> Void)?
     var isLoaded: ((Bool) -> Void)?
+    var interstitialView: StroeerInterstitialView?
     
     init(adSlotId: String) {
         self.adSlotId = adSlotId
@@ -25,7 +26,7 @@ class InterstitialViewController: UIViewController {
     
     func loadInterstitialAd() {
         self.delegate = InterstitialViewDelegate(viewController: self, errorCallback: onError, isLoaded: isLoaded)
-        Yieldlove.instance.interstitialAd(adSlotId: adSlotId, interstitialDelegate: delegate)
+        self.interstitialView = Yieldlove.instance.interstitialAd(adSlotId: adSlotId, interstitialDelegate: delegate)
     }
     
     deinit {
