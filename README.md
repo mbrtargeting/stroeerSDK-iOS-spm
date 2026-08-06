@@ -39,7 +39,7 @@ Available products:
 Add the following linker flag to your application target.
 
 ```
--ObjC
+-all_load
 ```
 
 Steps:
@@ -50,7 +50,7 @@ Steps:
 4. Add:
 
 ```
--ObjC
+-all_load
 ```
 
 ---
