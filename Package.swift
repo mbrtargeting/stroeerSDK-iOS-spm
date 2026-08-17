@@ -33,7 +33,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            exact: "12.14.0"
+            exact: "13.7.0"
         ),
         .package(
             url: "https://github.com/SourcePointUSA/ios-cmp-app.git",
@@ -44,7 +44,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "YieldloveAdIntegration",
-            url:"https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.0/YieldloveAdIntegration.xcframework.zip",
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.0/YieldloveAdIntegration.xcframework.zip",
             checksum: "5333b079d467aeb533f2134472cbfff7905779ec5ebdbdf8d3447cb64a672e3e"
         ),
         .binaryTarget(
@@ -78,13 +78,7 @@ let package = Package(
                 )
             ],
             path: "Sources/Core",
-            sources: [
-                "Shim.swift",
-                "YieldloveSPMResourceBundleProvider.swift"
-            ],
-            resources: [
-                .copy("YieldloveAdIntegration.bundle")
-            ]
+            sources: ["Shim.swift"]
         ),
 
         .target(
