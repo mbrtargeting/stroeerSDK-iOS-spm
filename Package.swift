@@ -44,18 +44,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "StroeerSDK",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK.xcframework.zip",
-            checksum: "1caa54aaf7488fd9d7178fd82e3646f7ac11758a1d3f41ef3bd840c6be9f89b9"
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.1/StroeerSDK.xcframework.zip",
+            checksum: "80d4aab5ab00ca0f4e5d9536584e2e24d292d84586cb1aeb61b75cb57759a12c"
         ),
         .binaryTarget(
             name: "StroeerSDK_Consent",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK_Consent.xcframework.zip",
-            checksum: "5e36355251ba4b2e3b8ceaaefa3046923e746635463a601c5fddf550d1ad1a5f"
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.1/StroeerSDK_Consent.xcframework.zip",
+            checksum: "bd98fdad23fcc3a0ce6b2277a405ec5c3639da4ca5023d92e5706bc793e09050"
         ),
         .binaryTarget(
             name: "StroeerSDK_Confiant",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK_Confiant.xcframework.zip",
-            checksum: "c1e45fdbd08b10deff010dd8ad0a24d2688db9a270f4e94fa0b69d0f71027c3d"
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.1/StroeerSDK_Confiant.xcframework.zip",
+            checksum: "dd5031d282c3cc3fb356a1e060524dbe0079aaf7b5c485bd8175f1caadb3b7ff"
         ),
         .binaryTarget(
             name: "XCPrebidMobile",
