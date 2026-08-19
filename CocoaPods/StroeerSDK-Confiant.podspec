@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
     'Stroeer Labs' => 'stroeerlabs@adscale.co.nz'
   }
   spec.source             = {
-    :http => 'https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/cocoapods-0.0.5/stroeer-sdk-0.0.5.zip'
+    :http => 'https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.5/stroeer-sdk-0.0.5.zip'
   }
 
   spec.requires_arc       = true
