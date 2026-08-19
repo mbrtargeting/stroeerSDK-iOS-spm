@@ -7,23 +7,23 @@ let package = Package(
 
     products: [
         .library(
-            name: "YieldloveAdIntegration",
-            targets: ["YieldloveAdIntegration", "CoreSupport"]
+            name: "StroeerSDK",
+            targets: ["StroeerSDK", "CoreSupport"]
         ),
         .library(
-            name: "YieldloveAdIntegration_Consent",
+            name: "StroeerSDK_Consent",
             targets: [
-                "YieldloveAdIntegration",
-                "YieldloveAdIntegration_Consent",
+                "StroeerSDK",
+                "StroeerSDK_Consent",
                 "CoreSupport",
                 "ConsentSupport"
             ]
         ),
         .library(
-            name: "YieldloveAdIntegration_Confiant",
+            name: "StroeerSDK_Confiant",
             targets: [
-                "YieldloveAdIntegration",
-                "YieldloveAdIntegration_Confiant",
+                "StroeerSDK",
+                "StroeerSDK_Confiant",
                 "CoreSupport",
                 "ConfiantSupport"
             ]
@@ -43,19 +43,19 @@ let package = Package(
 
     targets: [
         .binaryTarget(
-            name: "YieldloveAdIntegration",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/1.2.9/YieldloveAdIntegration.xcframework.zip",
-            checksum: "e676de6365a43847b50d0956400ee7a4983d639f721243e78d1fe8938440c57d"
+            name: "StroeerSDK",
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK.xcframework.zip",
+            checksum: "PLACEHOLDER"
         ),
         .binaryTarget(
-            name: "YieldloveAdIntegration_Consent",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/1.2.9/YieldloveAdIntegration_Consent.xcframework.zip",
-            checksum: "fd7790de229a653f4ceb705cbd2ba86d197f6eb991e4c7ff7fbe70f2ed8dbc46"
+            name: "StroeerSDK_Consent",
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK_Consent.xcframework.zip",
+            checksum: "PLACEHOLDER"
         ),
         .binaryTarget(
-            name: "YieldloveAdIntegration_Confiant",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/1.2.9/YieldloveAdIntegration_Confiant.xcframework.zip",
-            checksum: "2026bf76c1a90541755e5d70927646d140e2fa7b90e8a51a6ca93e81b7aca089"
+            name: "StroeerSDK_Confiant",
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/0.0.0/StroeerSDK_Confiant.xcframework.zip",
+            checksum: "PLACEHOLDER"
         ),
         .binaryTarget(
             name: "XCPrebidMobile",
@@ -69,7 +69,7 @@ let package = Package(
         .target(
             name: "CoreSupport",
             dependencies: [
-                "YieldloveAdIntegration",
+                "StroeerSDK",
                 "XCPrebidMobile",
                 "OMSDK_Prebidorg",
                 .product(
@@ -84,8 +84,8 @@ let package = Package(
         .target(
             name: "ConsentSupport",
             dependencies: [
-                "YieldloveAdIntegration",
-                "YieldloveAdIntegration_Consent",
+                "StroeerSDK",
+                "StroeerSDK_Consent",
                 "CoreSupport",
                 .product(
                     name: "ConsentViewController",
@@ -99,8 +99,8 @@ let package = Package(
         .target(
             name: "ConfiantSupport",
             dependencies: [
-                "YieldloveAdIntegration",
-                "YieldloveAdIntegration_Confiant",
+                "StroeerSDK",
+                "StroeerSDK_Confiant",
                 "CoreSupport"
             ],
             path: "Sources/Confiant",
@@ -108,3 +108,4 @@ let package = Package(
         )
     ]
 )
+
