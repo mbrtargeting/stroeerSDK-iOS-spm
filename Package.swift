@@ -44,18 +44,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "YieldloveAdIntegration",
-            url:"https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.0/YieldloveAdIntegration.xcframework.zip",
-            checksum: "5333b079d467aeb533f2134472cbfff7905779ec5ebdbdf8d3447cb64a672e3e"
+            url:"https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.1-test.1/YieldloveAdIntegration.xcframework.zip",
+            checksum: "a378249410b3b5ce43458c86170924e3991c1937aeab4b021f131cf3e6353a72"
         ),
         .binaryTarget(
             name: "YieldloveAdIntegration_Consent",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.0/YieldloveAdIntegration_Consent.xcframework.zip",
-            checksum: "0a6d75c481c823d5acc69797ef9ec61925d61e3bdca08ea75d4cb7dbeb606fe8"
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.1-test.1/YieldloveAdIntegration_Consent.xcframework.zip",
+            checksum: "d355beaf0c976849d3a5091d360a193070c702130354913fc6911a88453e0bee"
         ),
         .binaryTarget(
             name: "YieldloveAdIntegration_Confiant",
-            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.0/YieldloveAdIntegration_Confiant.xcframework.zip",
-            checksum: "e0da8ba92107c393f88f7aab033de08214931127df4089c067df67be6c944daa"
+            url: "https://github.com/mbrtargeting/stroeerSDK-iOS-spm/releases/download/10.6.1-test.1/YieldloveAdIntegration_Confiant.xcframework.zip",
+            checksum: "171b7114eba14834bbf14e86ec163916be2149097a928ff0a8fbe0c32f243c1e"
         ),
         .binaryTarget(
             name: "XCPrebidMobile",
